@@ -1,0 +1,19 @@
+inherit_gem:
+  armitage-rubocop:
+    - lib/rubocop.general.yml
+    - lib/rubocop.rake.yml
+    - lib/rubocop.rspec.yml
+
+AllCops:
+  TargetRubyVersion: 2.4.9
+  Include:
+    - lib/**/*.rb
+    - spec/**/*.rb
+    - Gemfile
+    - Rakefile
+    - smart_operation.gemspec
+    - bin/console
+
+# NOTE: It is not suitable for infrastracture-level frameworks
+Metrics/ParameterLists:
+  Enabled: false
