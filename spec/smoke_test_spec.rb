@@ -6,5 +6,7 @@ RSpec.describe 'Smoke test' do
       param :name, :string
       option :meta, :hash
     end)
+
+    MyLittleOperation.call('test', meta: {})
   end
 end

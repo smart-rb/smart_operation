@@ -10,8 +10,8 @@ class SmartCore::Operation::Result::Basic
   # @api private
   # @since 0.1.0
   def initialize(*result_arguments, &result_callback)
-    @__result_arguments__ = result_arguments
-    @__result_parameters, @__result_options__ = __extract_result_attributes__(result_arguments)
+    @__initial_result_arguments__ = result_arguments
+    @__result_parameters__, @__result_options__ = __extract_result_attributes__(result_arguments)
     @__result_callback__ = result_callback
   end
 
@@ -54,7 +54,7 @@ class SmartCore::Operation::Result::Basic
   #
   # @api private
   # @since 0.1.0
-  attr_reader :__result_attributes__
+  attr_reader :__initial_result_arguments__
 
   # @return [Array<Any>]
   #
@@ -84,7 +84,6 @@ class SmartCore::Operation::Result::Basic
     extracted_options = {}
 
     if (
-      klass.__options__.size >= 1 &&
       result_arguments.last.is_a?(Hash) &&
       result_arguments.last.keys.all? { |key| key.is_a?(Symbol) }
     )

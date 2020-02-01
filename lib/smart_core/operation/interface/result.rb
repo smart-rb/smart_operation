@@ -3,12 +3,13 @@
 # @api public
 # @since 0.1.0
 module SmartCore::Operation::Interface::Result
+  # @param result_attributes [Hash<Symbol,Any>]
   # @return [SmartCore::Operation::Result::Success]
   #
   # @api public
   # @since 0.1.0
-  def Success
-    SmartCore::Operation::Result::Success.new
+  def Success(**result_attributes)
+    SmartCore::Operation::Result::Success.new(**result_attributes)
   end
 
   # @return [SmartCore::Operation::Result::Failure]

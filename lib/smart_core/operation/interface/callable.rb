@@ -11,7 +11,6 @@ module SmartCore::Operation::Interface::Callable
     # @since 0.1.0
     def included(base_klass)
       base_klass.extend(ClassMethods)
-      base_klass.include(InstanceMethods)
     end
   end
 
