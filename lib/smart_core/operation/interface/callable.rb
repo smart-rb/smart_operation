@@ -28,12 +28,4 @@ module SmartCore::Operation::Interface::Callable
       new(*arguments).call(&block)
     end
   end
-
-  # @api private
-  # @since 0.1.0
-  module InstanceMethods
-    # @param block [Block]
-    # @return [Any]
-    def call(&block); end
-  end
 end

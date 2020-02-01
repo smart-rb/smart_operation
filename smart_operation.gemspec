@@ -28,7 +28,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency 'smart_engine', '~> 0.5'
-  spec.add_dependency 'smart_initializer', '~> 0.1.0.alpha2'
+  spec.add_dependency 'smart_initializer', '~> 0.1.0.alpha3'
 
   spec.add_development_dependency 'bundler',          '~> 2.1'
   spec.add_development_dependency 'rake',             '~> 13.0'

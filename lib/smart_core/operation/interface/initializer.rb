@@ -10,7 +10,6 @@ module SmartCore::Operation::Interface::Initializer
     # @api private
     # @since 0.1.0
     def included(base_klass)
-      binding.irb
       base_klass.include(SmartCore::Initializer)
     end
   end
