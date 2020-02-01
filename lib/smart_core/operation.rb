@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'smart_core'
+require 'smart_core/initializer'
 
 # @api public
 # @since 0.1.0
