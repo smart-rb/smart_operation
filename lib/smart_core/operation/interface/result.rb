@@ -12,27 +12,30 @@ module SmartCore::Operation::Interface::Result
     SmartCore::Operation::Result::Success.new(**result_attributes)
   end
 
+  # @param result_attributs [Array<Any>]
   # @return [SmartCore::Operation::Result::Failure]
   #
   # @api public
   # @since 0.1.0
-  def Failure
-    SmartCore::Operation::Result::Failure.new
+  def Failure(*result_attributes)
+    SmartCore::Operation::Result::Failure.new(*result_attributes)
   end
 
+  # @param result_attributes [Array<Any>]
   # @return [SmartCore::Operation::Result::Fatal]
   #
   # @api public
   # @since 0.1.0
-  def Fatal
-    SmartCore::Operation::Result::Fatal.new
+  def Fatal(*result_attributes)
+    raise(SmartCore::Operation::Result::Fatal.new(*result_attributes))
   end
 
+  # @param callback [Block]
   # @return [SmartCore::Operation::Result::Callback]
   #
   # @api public
   # @since 0.1.0
-  def Callback
-    SmartCore::Operation::Result::Callback.new
+  def Callback(&callback)
+    SmartCore::Operation::Result::Callback.new(&callback)
   end
 end

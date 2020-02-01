@@ -22,6 +22,15 @@ class SmartCore::Operation::Result::Success < SmartCore::Operation::Result::Basi
     true
   end
 
+  # @return [Hash<Symbol,Any>]
+  #
+  # @api public
+  # @since 0.1.0
+  def to_h
+    __result_options__.dup
+  end
+  alias_method :to_hash, :to_h
+
   private
 
   # @param result_options [Hash<Symbol,Any>]

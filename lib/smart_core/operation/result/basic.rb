@@ -4,15 +4,15 @@
 # @since 0.1.0
 class SmartCore::Operation::Result::Basic
   # @param result_arguments [Array<Any>]
-  # @param result_callback [Block]
+  # @param result_block [Block]
   # @return [void]
   #
   # @api private
   # @since 0.1.0
-  def initialize(*result_arguments, &result_callback)
+  def initialize(*result_arguments, &result_block)
     @__initial_result_arguments__ = result_arguments
     @__result_parameters__, @__result_options__ = __extract_result_attributes__(result_arguments)
-    @__result_callback__ = result_callback
+    @__result_block__ = result_block
   end
 
   # @return [Boolean]
@@ -68,11 +68,11 @@ class SmartCore::Operation::Result::Basic
   # @since 0.1.0
   attr_reader :__result_options__
 
-  # @return [Block]
+  # @return [Proc]
   #
   # @api private
   # @since 0.1.0
-  attr_reader :__result_callback__
+  attr_reader :__result_block__
 
   # @param result_arguments [Array<Any>]
   # @return [Array<Array<Any>,Hash<Symbol,Any>>]
