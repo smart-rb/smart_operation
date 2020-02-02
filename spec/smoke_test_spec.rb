@@ -96,4 +96,26 @@ RSpec.describe 'Smoke test' do
     expect(result.fatal?).to eq(false)
     expect(result.callback?).to eq(true)
   end
+
+  specify 'result-block-notation' do
+    class MegaOperation < SmartCore::Operation
+      param :switcher
+
+      def call
+        case switcher
+        when 1 then Success()
+        when 2 then Failure()
+        when 3 then Fatal()
+        when 4 then Callback(&(proc {}))
+        end
+      end
+    end
+
+    MegaOperation.call do |result|
+      result.success?  {  }
+      result.failure?  {  }
+      result.fatal?    {  }
+      result.callback? {  }
+    end
+  end
 end
