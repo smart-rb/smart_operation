@@ -49,7 +49,6 @@ class SmartCore::Operation::Result::Basic
 
   private
 
-
   # @return [Array<Any>]
   #
   # @api private
