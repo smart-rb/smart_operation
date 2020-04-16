@@ -77,9 +77,7 @@ RSpec.describe 'Smoke test' do
   specify 'callback result' do
     class MyLittleOperation5 < SmartCore::Operation
       def call
-        Callback do
-          'test100500'
-        end
+        Callback { 'test100500' }
       end
     end
 
@@ -111,7 +109,7 @@ RSpec.describe 'Smoke test' do
       end
     end
 
-    MegaOperation.call do |result|
+    MegaOperation.call(1) do |result|
       result.success?  {  }
       result.failure?  {  }
       result.fatal?    {  }
