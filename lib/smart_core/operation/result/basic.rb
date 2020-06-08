@@ -13,6 +13,7 @@ class SmartCore::Operation::Result::Basic
     @__initial_result_arguments__ = result_arguments
     @__result_parameters__, @__result_options__ = __extract_result_attributes__(result_arguments)
     @__result_block__ = result_block
+    __after_initialize__
   end
 
   # @return [Boolean]
@@ -94,4 +95,10 @@ class SmartCore::Operation::Result::Basic
 
     [extracted_parameters, extracted_options]
   end
+
+  # @return [void]
+  #
+  # @api private
+  # @since 0.1.0
+  def __after_initialize__; end
 end

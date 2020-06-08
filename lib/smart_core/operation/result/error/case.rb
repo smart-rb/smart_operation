@@ -2,19 +2,19 @@
 
 # @api public
 # @since 0.1.0
-class SmartCore::Operation::Result::ErrorCase
-  require_relative 'error_case/code'
-  require_relative 'error_case/context'
-
+class SmartCore::Operation::Result::Error::Case
   # @param code [String, Symbol, Any]
   # @param context [Hash, Any]
   # @return [void]
   #
   # @api private
   # @since 0.1.0
-  def initialize(code: Code::EMPTY_CODE, context: Context::EMPTY_CONTEXT)
-    @code = Code.build(code)
-    @context = Context.build(context)
+  def initialize(
+    code: SmartCore::Operation::Result::Error::Code::EMPTY_CODE,
+    context: SmartCore::Operation::Result::Error::Context::EMPTY_CONTEXT
+  )
+    @code = SmartCore::Operation::Result::Error::Code.new(code)
+    @context = SmartCore::Operation::Result::Error::Context.new(context)
   end
 
   # @return [String, Symbol, NilClass, Any]
@@ -22,7 +22,7 @@ class SmartCore::Operation::Result::ErrorCase
   # @api public
   # @since 0.1.0
   def code
-    code.identifier
+    @code.identifier
   end
 
   # @return [Hash]
@@ -30,7 +30,7 @@ class SmartCore::Operation::Result::ErrorCase
   # @api public
   # @since 0.1.0
   def context
-    context.data
+    @context.data
   end
 
   # @return [Hash<Synbol,Any>]

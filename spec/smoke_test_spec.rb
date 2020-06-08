@@ -57,11 +57,12 @@ RSpec.describe 'Smoke test' do
       end
     end
 
-    result = begin
-      MyLittleOperation4.call
-    rescue SmartCore::Operation::Result::Fatal::FatalError => error_object
-      error_object
-    end
+    result =
+      begin
+        MyLittleOperation4.call
+      rescue SmartCore::Operation::Result::Fatal::FatalError => error
+        error_object
+      end
 
     expect(result).to be_a(SmartCore::Operation::Result::Fatal::FatalError)
     expect(result.result).to be_a(SmartCore::Operation::Result::Fatal)
@@ -110,10 +111,10 @@ RSpec.describe 'Smoke test' do
     end
 
     MegaOperation.call(1) do |result|
-      result.success?  {  }
-      result.failure?  {  }
-      result.fatal?    {  }
-      result.callback? {  }
+      result.success?  {}
+      result.failure?  {}
+      result.fatal?    {}
+      result.callback? {}
     end
   end
 end

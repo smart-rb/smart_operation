@@ -27,12 +27,12 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'smart_engine', '~> 0.5'
-  spec.add_dependency 'smart_initializer', '~> 0.1.0.alpha4'
+  spec.add_dependency 'smart_engine', '~> 0.6'
+  spec.add_dependency 'smart_initializer', '~> 0.2.0'
 
   spec.add_development_dependency 'bundler',          '~> 2.1'
   spec.add_development_dependency 'rake',             '~> 13.0'
   spec.add_development_dependency 'rspec',            '~> 3.9'
-  spec.add_development_dependency 'armitage-rubocop', '~> 0.81'
+  spec.add_development_dependency 'armitage-rubocop', '~> 0.85'
   spec.add_development_dependency 'simplecov',        '~> 0.18'
 end

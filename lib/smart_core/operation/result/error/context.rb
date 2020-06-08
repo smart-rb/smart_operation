@@ -2,7 +2,7 @@
 
 # @api public
 # @since 0.1.0
-class SmartCore::Operation::Result::ErrorCase::Contex
+class SmartCore::Operation::Result::Error::Context
   # @return [Hash]
   #
   # @api private
@@ -20,7 +20,7 @@ class SmartCore::Operation::Result::ErrorCase::Contex
   #
   # @api private
   # @since 0.1.0
-  def intialize(context = EMPTY_CONTEXT.dup)
+  def initialize(context = EMPTY_CONTEXT.dup)
     @context = context
   end
 
