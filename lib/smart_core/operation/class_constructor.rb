@@ -46,6 +46,7 @@ module SmartCore::Operation::ClassConstructor
     def inject_initializer_interface(klass, parameters)
       unless klass < SmartCore::Initializer
         klass.include(SmartCore::Initializer(type_system: parameters.type_system))
+        klass.ext_init { |instance| SmartCore::Operation::InstanceBuilder.call(instance) }
       end
     end
 

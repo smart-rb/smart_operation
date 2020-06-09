@@ -25,11 +25,12 @@ class SmartCore::Operation::Result::Callback < SmartCore::Operation::Result::Bas
     context == EMPTY_INVOKATION_CONTEXT ? callback.call : context.instance_eval(&callback)
   end
 
+  # @yield [SmartCore::Operation::Result::Callback]
   # @return [Boolean]
   #
   # @api public
   # @since 0.1.0
   def callback?
-    true
+    true.tap { yield(self) if block_given? }
   end
 end

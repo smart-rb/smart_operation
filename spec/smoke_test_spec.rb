@@ -64,15 +64,14 @@ RSpec.describe 'Smoke test' do
         error_object
       end
 
-    expect(result).to be_a(SmartCore::Operation::Result::Fatal::FatalError)
-    expect(result.result).to be_a(SmartCore::Operation::Result::Fatal)
-    expect(result.result.error_codes).to contain_exactly(:start_to_exit, :or_not?)
-    expect(result.result.error_context).to match(some_data: true, but_true: false)
+    expect(result).to be_a(SmartCore::Operation::Result::Fatal)
+    expect(result.error_codes).to contain_exactly(:start_to_exit, :or_not?)
+    expect(result.error_context).to match(some_data: true, but_true: false)
 
-    expect(result.result.success?).to eq(false)
-    expect(result.result.failure?).to eq(false)
-    expect(result.result.fatal?).to eq(true)
-    expect(result.result.callback?).to eq(false)
+    expect(result.success?).to eq(false)
+    expect(result.failure?).to eq(false)
+    expect(result.fatal?).to eq(true)
+    expect(result.callback?).to eq(false)
   end
 
   specify 'callback result' do
@@ -110,11 +109,45 @@ RSpec.describe 'Smoke test' do
       end
     end
 
-    MegaOperation.call(1) do |result|
-      result.success?  {}
-      result.failure?  {}
-      result.fatal?    {}
-      result.callback? {}
+    container_result = []
+    result = MegaOperation.call(1) do |res|
+      res.success?  { container_result << :success }
+      res.failure?  { container_result << :failure }
+      res.fatal?    { container_result << :fatal }
+      res.callback? { container_result << :callback }
     end
+
+    expect(container_result).to contain_exactly(:success)
+    expect(result).to be_a(SmartCore::Operation::Result::Success)
+
+    container_result = []
+    result = MegaOperation.call(2) do |res|
+      res.success?  { container_result << :success }
+      res.failure?  { container_result << :failure }
+      res.fatal?    { container_result << :fatal }
+      res.callback? { container_result << :callback }
+    end
+    expect(container_result).to contain_exactly(:failure)
+    expect(result).to be_a(SmartCore::Operation::Result::Failure)
+
+    container_result = []
+    result = MegaOperation.call(3) do |res|
+      res.success?  { container_result << :success }
+      res.failure?  { container_result << :failure }
+      res.fatal?    { container_result << :fatal }
+      res.callback? { container_result << :callback }
+    end
+    expect(container_result).to contain_exactly(:fatal)
+    expect(result).to be_a(SmartCore::Operation::Result::Fatal)
+
+    container_result = []
+    result = MegaOperation.call(4) do |res|
+      res.success?  { container_result << :success }
+      res.failure?  { container_result << :failure }
+      res.fatal?    { container_result << :fatal }
+      res.callback? { container_result << :callback }
+    end
+    expect(container_result).to contain_exactly(:callback)
+    expect(result).to be_a(SmartCore::Operation::Result::Callback)
   end
 end

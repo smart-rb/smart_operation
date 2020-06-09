@@ -14,6 +14,15 @@ class SmartCore::Operation::Result::Error < SmartCore::Operation::Result::Basic
   # @since 0.1.0
   attr_reader :errors
 
+  # @yield [SmartCore::Operation::Result::Error]
+  # @return [Boolean]
+  #
+  # @api public
+  # @since 0.1.0
+  def error?
+    true.tap { yield(self) if block_given? }
+  end
+
   # @return [Array<String|Symbol|Any>]
   #
   # @api public

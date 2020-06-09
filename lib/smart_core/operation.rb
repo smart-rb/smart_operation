@@ -11,9 +11,10 @@ module SmartCore
   class Operation
     require_relative 'operation/version'
     require_relative 'operation/errors'
-    require_relative 'operation/class_constructor'
     require_relative 'operation/result'
     require_relative 'operation/interface'
+    require_relative 'operation/instance_builder'
+    require_relative 'operation/class_constructor'
 
     class << self
       # @param child_klass [Class]
@@ -50,8 +51,10 @@ module SmartCore
     #
     # @api public
     # @since 0.1.0
+    # rubocop:disable Naming/MethodName
     def Operation(type_system: SmartCore::Operation::ClassConsructor.default_type_system)
       SmartCore::Operation::ClassConsructor.construct(type_system: type_system)
     end
+    # rubocop:enable Naming/MethodName
   end
 end

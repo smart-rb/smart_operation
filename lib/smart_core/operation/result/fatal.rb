@@ -10,15 +10,15 @@ class SmartCore::Operation::Result::Fatal < SmartCore::Operation::Result::Error
     #
     # @api private
     # @since 0.1.0
-    attr_reader :result
+    attr_reader :__operation_result__
 
-    # @param result [SmartCore::Operation::Result::Fatal]
+    # @param operation_result [SmartCore::Operation::Result::Fatal]
     # @return [void]
     #
     # @api private
     # @since 0.1.0
-    def initialize(result)
-      @result = result
+    def initialize(operation_result)
+      @__operation_result__ = operation_result
     end
   end
 
@@ -30,11 +30,12 @@ class SmartCore::Operation::Result::Fatal < SmartCore::Operation::Result::Error
     FatalError.new(self)
   end
 
+  # @yield [SmartCore::Operation::Result::Fatal]
   # @return [Boolean]
   #
   # @api public
   # @since 0.1.0
   def fatal?
-    true
+    true.tap { yield(self) if block_given? }
   end
 end

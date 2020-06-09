@@ -14,12 +14,13 @@ class SmartCore::Operation::Result::Success < SmartCore::Operation::Result::Basi
     __define_virtual_acessors__(result_options)
   end
 
+  # @yield [SmartCore::Operation::Result::Success]
   # @return [Boolean]
   #
   # @api public
   # @since 0.1.0
   def success?
-    true
+    true.tap { yield(self) if block_given? }
   end
 
   # @return [Hash<Symbol,Any>]
