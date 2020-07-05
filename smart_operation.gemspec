@@ -29,6 +29,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'smart_engine',      '~> 0.7'
   spec.add_dependency 'smart_initializer', '~> 0.2.0'
+  spec.add_dependency 'smart_container',   '~> 0.7'
   spec.add_dependency 'smart_injection',   '~> 0.0.0.alpha'
 
   spec.add_development_dependency 'bundler',          '~> 2.1'

@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     smart_operation (0.1.0)
+      smart_container (~> 0.7)
       smart_engine (~> 0.7)
       smart_initializer (~> 0.2.0)
       smart_injection (~> 0.0.0.alpha)
@@ -76,6 +77,8 @@ GEM
       docile (~> 1.1)
       simplecov-html (~> 0.11)
     simplecov-html (0.12.2)
+    smart_container (0.7.0)
+      smart_engine (~> 0.5)
     smart_engine (0.7.0)
     smart_initializer (0.2.0)
       qonfig (~> 0.24)

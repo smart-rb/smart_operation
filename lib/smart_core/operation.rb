@@ -32,6 +32,8 @@ module SmartCore
     include SmartCore::Operation::Interface::Result
     # @since 0.1.0
     include SmartCore::Operation::Interface::Callable
+    # @since 0.1.0
+    include SmartCore::Injection
 
     # @return [SmartCore::Operation::Result::Success]
     # @return [SmartCore::Operation::Result::Callback]
