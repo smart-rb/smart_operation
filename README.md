@@ -11,6 +11,8 @@ Smart implementation of the most-used programming pattern - Service Object.
 - `call.new.call` invocation behavior;
 - dependency injection (powered by [smart_injection](https://github.com/smart-rb/smart_injection));
 
+---
+
 ## Installation
 
 ```ruby
@@ -25,6 +27,44 @@ gem install smart_types
 
 ```ruby
 require 'smart_core/operation'
+```
+
+---
+
+## Synopsis
+
+```ruby
+# some prerequisits:
+
+class UserRepo
+  def create(user_creds)
+     # ... some code
+  end
+end
+
+ReposContainer = SmartCore::Container.define do
+  namespace(:business) do
+    register(:users) { UserRepo.new }
+  end
+end
+```
+
+```
+# operation usage:
+
+class CreateUser < SmartCore::Operation
+  register_container(ReposContainer)
+  
+  import { repo: 'business.users' }, access: :private
+  
+  option :name, 'value.string'
+  option :password, 'value.string'
+  option :age, 'value.integer'
+  
+  def call
+    user_repo.create({ name: name, password: password, age: age })
+  end
+end
 ```
 
 ---
