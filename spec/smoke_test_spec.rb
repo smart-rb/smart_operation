@@ -10,6 +10,26 @@ RSpec.describe 'Smoke test' do
     MyLittleOperation.call('test', meta: {})
   end
 
+  specify 'dependency injection' do
+    AppContainer = SmartCore::Container.define do
+      namespace(:database) do
+        register(:cache) { 'memcached' }
+      end
+    end
+
+    class DependencyCheckOperation < SmartCore::Operation
+      register_container(AppContainer)
+
+      import({ cache: 'database.cache' })
+
+      def call
+        cache
+      end
+    end
+
+    expect(DependencyCheckOperation.call).to eq('memcached')
+  end
+
   specify 'success result' do
     class MyLittleOperation2 < SmartCore::Operation
       def call

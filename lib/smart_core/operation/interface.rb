@@ -5,4 +5,5 @@
 module SmartCore::Operation::Interface
   require_relative 'interface/result'
   require_relative 'interface/callable'
+  require_relative 'interface/di'
 end

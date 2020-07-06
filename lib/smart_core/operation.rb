@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'smart_core'
+require 'smart_core/injection'
 require 'smart_core/initializer'
 
 # @api public
@@ -33,7 +34,7 @@ module SmartCore
     # @since 0.1.0
     include SmartCore::Operation::Interface::Callable
     # @since 0.1.0
-    include SmartCore::Injection
+    include SmartCore::Operation::Interface::DI
 
     # @return [SmartCore::Operation::Result::Success]
     # @return [SmartCore::Operation::Result::Callback]
