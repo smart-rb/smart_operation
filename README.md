@@ -6,6 +6,7 @@ Smart implementation of the most-used programming pattern - Service Object.
 
 ## Main features
 
+- multifunctional constructor DSL (powerd by [smart_initializer](https://github.com/smart-rb/smart_initializer));
 - result object interface (`Success`, `Failure`, `Fatal`, `Callback`);
 - `call.new.call` invocation behavior;
 - dependency injection (powered by [smart_injection](https://github.com/smart-rb/smart_injection));
