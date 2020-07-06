@@ -34,24 +34,6 @@ require 'smart_core/operation'
 ## Synopsis
 
 ```ruby
-# some prerequisits:
-
-class UserRepo
-  def create(user_creds)
-     # ... some code
-  end
-end
-
-ReposContainer = SmartCore::Container.define do
-  namespace(:business) do
-    register(:users) { UserRepo.new }
-  end
-end
-```
-
-```
-# operation usage:
-
 class CreateUser < SmartCore::Operation
   register_container(ReposContainer)
   
@@ -63,6 +45,22 @@ class CreateUser < SmartCore::Operation
   
   def call
     user_repo.create({ name: name, password: password, age: age })
+  end
+end
+```
+
+Pre-requisits:
+
+```ruby
+class UserRepo
+  def create(user_creds)
+     # ... some code
+  end
+end
+
+ReposContainer = SmartCore::Container.define do
+  namespace(:business) do
+    register(:users) { UserRepo.new }
   end
 end
 ```
