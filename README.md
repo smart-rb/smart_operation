@@ -47,6 +47,8 @@ class CreateUser < SmartCore::Operation
     user_repo.create({ name: name, password: password, age: age })
   end
 end
+
+CreateUser.call(name: 'Rustam', password: 'test123', age: 28)
 ```
 
 Pre-requisits:
