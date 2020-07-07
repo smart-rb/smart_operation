@@ -37,7 +37,7 @@ require 'smart_core/operation'
 class CreateUser < SmartCore::Operation
   register_container(ReposContainer)
   
-  import { repo: 'business.users' }, access: :private
+  import { user_repo: 'business.users' }, access: :private
   
   option :name, 'value.string'
   option :password, 'value.string'
