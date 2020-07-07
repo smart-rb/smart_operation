@@ -2,6 +2,8 @@
 
 Smart implementation of the most-used programming pattern - Service Object.
 
+> previous generation: https://github.com/0exp/smart_core
+
 ---
 
 ## Main features
