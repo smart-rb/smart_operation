@@ -46,11 +46,17 @@ class CreateUser < SmartCore::Operation
   option :age, 'value.integer'
   
   def call
-    user_repo.create({ name: name, password: password, age: age })
+    user =  user_repo.create({ name: name, password: password, age: age })
+    Success(user: user)
   end
 end
 
-CreateUser.call(name: 'Rustam', password: 'test123', age: 28)
+CreateUser.call(name: 'Rustam', password: 'test123', age: 28) do |result|
+  result.success?  { puts 'success!' }
+  result.failure?  { puts 'failure!' }
+  result.fatal?    { puts 'fatal!' }
+  result.callback? { result.call }
+end
 ```
 
 Pre-requisits:
