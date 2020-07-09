@@ -3,8 +3,8 @@ PATH
   specs:
     smart_operation (0.1.0)
       smart_engine (~> 0.7)
-      smart_initializer (~> 0.2.0)
-      smart_injection (~> 0.1.0)
+      smart_initializer (~> 0.2)
+      smart_injection (~> 0.1)
 
 GEM
   remote: https://rubygems.org/
