@@ -14,7 +14,7 @@ class SmartCore::Operation::ClassConstructor::Parameters
   #
   # @api private
   # @since 0.1.0
-  def initialize(type_system: default_type_system)
+  def initialize(type_system:)
     @type_system = type_system
   end
 end
