@@ -47,7 +47,7 @@ class CreateUser < SmartCore::Operation
 
   def call
     user = user_repo.create({ name: name, password: password, age: age })
-    Success(user: user)
+    Success(user: user) # or Callback { puts 'wow o.O' }
   end
 end
 
@@ -55,7 +55,7 @@ CreateUser.call(name: 'Rustam', password: 'test123', age: 28) do |result|
   result.success?  { puts 'success!' }
   result.failure?  { puts 'failure!' }
   result.fatal?    { puts 'fatal!' }
-  result.callback? { result.call }
+  result.callback? { result.call } # or some_object.instance_eval(&result.callback)
 end
 ```
 
