@@ -28,6 +28,10 @@ RSpec.describe 'Smoke test' do
     end
 
     expect(DependencyCheckOperation.call).to eq('memcached')
+
+    AppContainer.fetch(:database).register(:cache) { 'redis' }
+
+    expect(DependencyCheckOperation.call).to eq('redis')
   end
 
   specify 'success result' do
