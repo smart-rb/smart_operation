@@ -46,7 +46,7 @@ class CreateUser < SmartCore::Operation
   option :age, 'value.integer'
 
   def call
-    user =  user_repo.create({ name: name, password: password, age: age })
+    user = user_repo.create({ name: name, password: password, age: age })
     Success(user: user)
   end
 end
