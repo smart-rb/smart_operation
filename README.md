@@ -38,13 +38,13 @@ require 'smart_core/operation'
 ```ruby
 class CreateUser < SmartCore::Operation
   register_container(ReposContainer)
-  
+
   import({ user_repo: 'business.users' }, access: :private)
-  
+
   option :name, 'value.string'
   option :password, 'value.string'
   option :age, 'value.integer'
-  
+
   def call
     user =  user_repo.create({ name: name, password: password, age: age })
     Success(user: user)
@@ -74,6 +74,12 @@ ReposContainer = SmartCore::Container.define do
   end
 end
 ```
+
+---
+
+## Roadmap
+
+- pattern matching for result objects (`Success`, `Failure`, `Fatal`, `Callback`);
 
 ---
 
