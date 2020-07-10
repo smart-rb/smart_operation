@@ -22,16 +22,18 @@ RSpec.describe 'Smoke test' do
 
       import({ cache: 'database.cache' })
 
+      option :info, SmartCore::Types::Value::Numeric
+
       def call
-        cache
+        Success(cache: cache)
       end
     end
 
-    expect(DependencyCheckOperation.call).to eq('memcached')
+    expect(DependencyCheckOperation.call(info: 123).cache).to eq('memcached')
 
     AppContainer.fetch(:database).register(:cache) { 'redis' }
 
-    expect(DependencyCheckOperation.call).to eq('redis')
+    expect(DependencyCheckOperation.call(info: 500).cache).to eq('redis')
   end
 
   specify 'success result' do
