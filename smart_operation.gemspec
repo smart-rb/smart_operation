@@ -15,9 +15,12 @@ Gem::Specification.new do |spec|
   spec.homepage    = 'https://github.com/smart-rb/smart_operation'
   spec.license     = 'MIT'
 
-  spec.metadata['homepage_uri']    = spec.homepage
-  spec.metadata['source_code_uri'] = 'https://github.com/smart-rb/smart_operation'
-  spec.metadata['changelog_uri']   = 'https://github.com/smart-rb/smart_operation/blob/master/CHANGELOG.md'
+  spec.metadata['homepage_uri']
+    = spec.homepage
+  spec.metadata['source_code_uri']
+    = 'https://github.com/smart-rb/smart_operation'
+  spec.metadata['changelog_uri']
+    = 'https://github.com/smart-rb/smart_operation/blob/master/CHANGELOG.md'
 
   spec.files = Dir.chdir(File.expand_path(__dir__)) do
     `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
