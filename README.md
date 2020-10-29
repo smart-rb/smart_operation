@@ -1,6 +1,6 @@
 # SmartCore::Operation &middot; [![Gem Version](https://badge.fury.io/rb/smart_operation.svg)](https://badge.fury.io/rb/smart_operation) [![Build Status](https://travis-ci.org/smart-rb/smart_operation.svg?branch=master)](https://travis-ci.org/smart-rb/smart_operation)
 
-Smart implementation of the most-used programming pattern - Service Object.
+Smart implementation of the most-used programming pattern - Service Object. Powered by smart_injection, smart_container, smart_types and smart_initializer.
 
 > previous generation: https://github.com/0exp/smart_core
 
