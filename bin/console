@@ -2,7 +2,7 @@
 # frozen_string_literal: true
 
 require 'bundler/setup'
-require 'smart_core/operation'
+require 'smart_core'
 
-require 'irb'
-IRB.start(__FILE__)
+require 'pry'
+Pry.start

@@ -86,7 +86,7 @@ RSpec.describe 'Smoke test' do
     result =
       begin
         MyLittleOperation4.call
-      rescue SmartCore::Operation::Result::Fatal::FatalError => error
+      rescue SmartCore::Operation::Result::Fatal::FatalError
         error_object
       end
 

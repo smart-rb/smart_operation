@@ -2,6 +2,7 @@
 
 # @api public
 # @since 0.1.0
+# rubocop:disable Naming/MethodName
 module SmartCore::Operation::Interface::Result
   # @param result_attributes [Hash<Symbol,Any>]
   # @return [SmartCore::Operation::Result::Success]
@@ -39,3 +40,4 @@ module SmartCore::Operation::Interface::Result
     SmartCore::Operation::Result::Callback.new(&callback)
   end
 end
+# rubocop:enable Naming/MethodName

@@ -5,7 +5,8 @@ inherit_gem:
     - lib/rubocop.rspec.yml
 
 AllCops:
-  TargetRubyVersion: 2.7.1
+  TargetRubyVersion: 3.0.0
+  NewCops: enable
   Include:
     - lib/**/*.rb
     - spec/**/*.rb
@@ -17,3 +18,8 @@ AllCops:
 # NOTE: It is not suitable for infrastracture-level frameworks
 Metrics/ParameterLists:
   Enabled: false
+
+# NOTE: It is ok to use empty blocks in simple test examples (in specs)
+Lint/EmptyBlock:
+  Exclude:
+    - spec/**/*.rb
