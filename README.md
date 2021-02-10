@@ -82,6 +82,7 @@ end
 - pattern matching for result objects (`Success`, `Failure`, `Fatal`, `Callback`);
 - migrate to `Github Actions`;
 - parametrized `.call` methods (`ServiceObject.with(attrs_a).call(attrs_b)` => `ServiceObject.new(attrs_b).call(attrs_a)` or something another);
+- think about default exception classes and interfaces;
 
 ---
 
