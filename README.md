@@ -83,7 +83,7 @@ end
 - migrate to `Github Actions`;
 - parametrized `.call` methods (`ServiceObject.with(attrs_a).call(attrs_b)` => `ServiceObject.new(attrs_b).call(attrs_a)` or something another);
 - think about default exception classes and interfaces to support a basic domain-specific exception class definitioning (common practice);
-- generators: an ability to invoke result block in repeatable `yield`-like style :thinking: (think about Fibers, js-like generators and similar) (for example: `.generator(call_attrs) do |result| # repeatable result block invokation for each "yield" from an instade "generator" method)`;
+- generators: an ability to invoke result block in repeatable `yield`-like style :thinking: (think about Fibers, js-like generators and similar) (for example: `.generator(call_attrs) do |result| # repeatable result block invokation for each "yield" from an inside "generator" method)`;
 
 ---
 
