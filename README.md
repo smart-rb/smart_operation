@@ -1,8 +1,16 @@
-# SmartCore::Operation &middot; [![Gem Version](https://badge.fury.io/rb/smart_operation.svg)](https://badge.fury.io/rb/smart_operation)
+# SmartCore::Operation &middot; [![Supporting](https://github.com/Cado-Labs/cado-labs-logos/blob/main/cado_labs_badge.png)](https://github.com/Cado-Labs/) &middot; [![Gem Version](https://badge.fury.io/rb/smart_operation.svg)](https://badge.fury.io/rb/smart_operation)
 
 Smart implementation of the most-used programming pattern - Service Object. Powered by smart_injection, smart_container, smart_types and smart_initializer.
 
 > previous generation: https://github.com/0exp/smart_core
+
+---
+
+<p>
+  <a href="https://github.com/Cado-Labs">
+    <img src="https://github.com/Cado-Labs/cado-labs-logos/blob/main/cado_labs_supporting.svg" alt="Supported by Cado Labs" />
+  </a>
+</p>
 
 ---
 
@@ -121,6 +129,12 @@ bundle exec rubocop -A
 ## License
 
 Released under MIT License.
+
+## Supporting
+
+<a href="https://github.com/Cado-Labs">
+  <img src="https://github.com/Cado-Labs/cado-labs-logos/blob/main/cado_labs_logo.png" alt="Supported by Cado Labs" />
+</a>
 
 ## Authors
 
