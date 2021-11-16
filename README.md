@@ -1,4 +1,4 @@
-# SmartCore::Operation &middot; [![Supporting](https://github.com/Cado-Labs/cado-labs-logos/blob/main/cado_labs_badge.png)](https://github.com/Cado-Labs/) &middot; [![Gem Version](https://badge.fury.io/rb/smart_operation.svg)](https://badge.fury.io/rb/smart_operation)
+# SmartCore::Operation &middot; <a target="_blank" href="https://github.com/Cado-Labs"><img src="https://github.com/Cado-Labs/cado-labs-logos/raw/main/cado_labs_badge.svg" alt="Supported by Cado Labs" style="max-width: 100%; height: 20px"></a> &middot; [![Gem Version](https://badge.fury.io/rb/smart_operation.svg)](https://badge.fury.io/rb/smart_operation)
 
 Smart implementation of the most-used programming pattern - Service Object. Powered by smart_injection, smart_container, smart_types and smart_initializer.
 
