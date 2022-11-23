@@ -67,7 +67,7 @@ CreateUser.call(name: 'Rustam', password: 'test123', age: 28) do |result|
 end # NOTE: returns <result> object, but invokes the correspinding block
 
 # COMING SOON:
-CreateUser.exec(name: 'Rustam', password: 'test123', age: 28) do |result
+CreateUser.exec(name: 'Rustam', password: 'test123', age: 28) do |result|
   # ...the same code as above...
 end # NOTE: returns the result of the corresponding invoked block object
 ```
